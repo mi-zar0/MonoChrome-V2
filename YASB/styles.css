@@ -1,0 +1,183 @@
+:root {
+    /* --- Mica Inspired Color Variables --- */
+    --background-color: #141414;
+    --white: #737373;
+}
+
+/* GLOBAL CONFIGURATIONS */
+.yasb-bar {
+    background-color: var(--background-color);
+    border: 1px solid var(--white);
+    border-radius: 2px;
+}
+
+/*KOMOREBI_WORKSPACES*/
+.komorebi-workspaces .widget-container {
+    margin-left: 8px;
+    margin-right: 8px;
+}
+.komorebi-workspaces .ws-btn {
+    border: none;
+    background-color: transparent;
+    margin-right: 3px;
+    margin-left: 3px;
+    margin-top: 3px;
+    padding-bottom: 2px;
+    font-size: 14px;
+    color: #565656;
+}
+.komorebi-workspaces .ws-btn.populated {
+    color: #a8a8a8;
+}
+.komorebi-workspaces .ws-btn.active {
+    color: var(--white);
+}
+
+/*SEPARATOR*/
+.separator-widget {
+    padding-bottom: 5px;
+}
+.separator-widget .label {
+    font-size: 19px;
+    color: #737373;
+}
+
+/*CLOCK*/
+.clock-widget {
+    margin-left: 8px;
+    margin-right: 8px;
+}
+.clock-widget .label {
+    color: var(--white);
+    font-size: 15px;
+    font-weight: 600;
+    font-family: "IoskeleyMono Nerd Font";
+}
+
+/*VOLUME*/
+.volume-widget {
+    margin-left: 8px;
+    margin-right: 8px;
+}
+.volume-widget .label {
+    font-family: "IoskeleyMono Nerd Font";
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--white);
+}
+.volume-widget .icon {
+    color: var(--white);
+    font-size: 18px;
+    margin-top: 5px;
+    margin-right: 3px;
+}
+.volume-widget .icon.muted {
+    margin-bottom: 6px;
+    margin-right: 3px;
+    font-size: 15px11;
+}
+
+/*POWER_MENU*/
+.power-menu-widget {
+    margin-right: 4px;
+    margin-left: 8px;
+}
+.power-menu-widget .icon {
+    font-size: 18px;
+    font-family: "IoskeleyMono Nerd Font";
+    color: var(--white);
+    padding-right: 5px;
+    margin-top: 1px;
+}
+.power-menu-compact {
+    background-color: var(--background-color);
+    min-width: 230;
+    margin-top: 3px;
+    margin-right: 7px;
+    border-radius: 2px;
+}
+.power-menu-compact .profile-info {
+    padding: 12px 0 24px 0;
+}
+.power-menu-compact .profile-info .profile-username {
+    font-size: 35px;
+    font-weight: 600;
+    color: var(--white);
+    font-family: "Bahnschrift";
+    margin-top: 10px;
+}
+.power-menu-compact .profile-info .profile-email {
+    font-size: 1px;
+    color: var(--background-color);
+}
+.power-menu-compact .profile-info .profile-account-type {
+    font-size: 1px;
+    color: var(--background-color);
+}
+.power-menu-compact .manage-accounts {
+    font-size: 12px;
+    color: var(--white);
+    background-color: rgba(255, 255, 255, 0.08);
+    font-family: "Segoe UI";
+    font-weight: 600;
+    padding: 3px 8px 6px 8px;
+    border-radius: 2px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.power-menu-compact .manage-accounts:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+.power-menu-compact .buttons {
+    background-color: transparent;
+    margin: 0px 19px 8px 12px;
+    border-radius: 2px;
+}
+.power-menu-compact .button {
+    padding: 8px 16px;
+    background-color: #2d2d2d;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    border-radius: 2px;
+}
+.power-menu-compact .button.hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+.power-menu-compact .button.lock .label {
+    font-size: 15px;
+}
+.power-menu-compact .button.signout .label {
+    font-size: 15px;
+}
+.power-menu-compact .button.restart .label {
+    font-size: 15px;
+}
+.power-menu-compact .button.shutdown .label {
+    font-size: 15px;
+}
+.power-menu-compact .button .icon {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.4);
+    padding-right: 10px;
+    min-width: 20px;
+}
+.power-menu-compact .button .label {
+    font-size: 13px;
+    font-weight: 500;
+    font-family: "Bahnschrift";
+    color: #bebec0;
+}
+.power-menu-compact .icon.hover,
+.power-menu-compact .label.hover {
+    color: #ffffff;
+}
+
+/*ACTIVE_WINDOWS*/
+.active-window-widget {
+    margin-left: 8px;
+}
+.active-window-widget .label {
+    font-family: "Bahnschrift";
+    font-size: 14px;
+    margin-top: 1px;
+    color: var(--white);
+}
