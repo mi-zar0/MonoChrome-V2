@@ -1,0 +1,166 @@
+watch_stylesheet: true
+watch_config: true
+debug: false
+update_check: true
+
+komorebi:
+  start_command: "komorebic start --whkd"
+  stop_command: "komorebic stop --whkd"
+  reload_command: "komorebic reload-configuration"
+
+bars:
+  primary-bar:
+    enabled: true
+    screens: ["*"]
+    class_name: "yasb-bar"
+    alignment:
+      position: "top"
+      center: false
+    blur_effect:
+      enabled: false
+      acrylic: false
+      dark_mode: true
+      round_corners: false
+      border_color: "None"
+    window_flags:
+      always_on_top: true
+      windows_app_bar: true
+      hide_on_fullscreen: true
+    dimensions:
+      width: "100%"
+      height: 36
+    padding:
+      top: 8
+      left: 8
+      bottom: 0
+      right: 8
+    widgets:
+      left:
+      - komorebi_workspaces
+      - lines
+      - active_window
+      right:
+      - clock
+      - lines
+      - volume
+      - lines
+      - power_menu
+      
+widgets:
+  clock:
+    type: yasb.clock.ClockWidget
+    options:
+      label: '{%I:%M %p}'
+      label_alt: '{%A, %d %b %Y}'
+      timezones: []
+      tooltip: false
+      calendar:
+        blur: false
+        round_corners: true
+        alignment: center
+        direction: down
+        extended: false
+        show_years: true
+        show_holidays: false
+        show_week_numbers: true
+      callbacks:
+        on_left: do_nothing
+        on_right: toggle_label
+        
+  volume:
+    type: yasb.volume.VolumeWidget
+    options:
+      label: '{level}'
+      label_alt: <span>{icon}</span>{level}
+      tooltip: false
+      volume_icons:
+      - "\ue74f"
+      - "\uE994"
+      - "\uE994"
+      - "\uE994"
+      - "\uE994"
+      callbacks:
+        on_left: do_nothing
+        on_right: toggle_mute
+      audio_menu:
+        blur: false
+        round_corners: true
+        round_corners_type: normal
+        border_color: system
+        alignment: right
+        direction: down
+        show_apps: true
+        show_app_labels: true
+        show_app_icons: true
+        show_apps_expanded: false
+        app_icons:
+          toggle_down: "\uE972"
+          toggle_up: "\uE971"
+  
+  komorebi_workspaces:
+    type: "komorebi.workspaces.WorkspaceWidget"
+    options:
+      label_offline: "Komorebi Offline"
+      label_workspace_btn: "◇"
+      label_workspace_active_btn: "◆"
+      label_workspace_populated_btn: "◇"
+      label_default_name: "{index}"
+      label_zero_index: false
+      hide_empty_workspaces: false
+      hide_if_offline: true
+      animation: true
+
+  lines:
+    type: "yasb.custom.CustomWidget"
+    options:
+      label: "\u007c"
+      label_alt: "\u007c"
+      class_name: "separator-widget"
+      callbacks:
+        on_left: "do_nothing"
+
+  power_menu:
+    type: yasb.power_menu.PowerMenuWidget
+    options:
+      label: "<span>[X]</span>"
+      uptime: true
+      show_user: true
+      menu_style: popup
+      popup:
+        blur: false
+        round_corners: true
+        round_corners_type: normal
+        border_color: System
+        alignment: right
+        offset_left: 12
+      profile_image_size: 64
+      buttons:
+        lock:
+        - "\uDB80\uDF41"
+        - Screen Lock
+        signout:
+        - "\uDB80\uDF43"
+        - Sign out
+        restart:
+        - "\uDB81\uDC53"
+        - Restart
+        shutdown:
+        - "\uDB82\uDD06"
+        - Shut Down
+        cancel:
+        - ''
+        - Cancel
+
+  active_window:
+    type: "yasb.active_window.ActiveWindowWidget"
+    options:
+      label: "{win[title]}"
+      label_alt: "[class_name='{win[class_name]}' exe='{win[process][name]}' hwnd={win[hwnd]}]"
+      label_no_window: ""
+      label_icon: false
+      callbacks:
+        on_left: do_nothing
+      label_icon_size: 16
+      max_length: 56
+      max_length_ellipsis: "..."
+      monitor_exclusive: true
